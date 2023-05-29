@@ -14,6 +14,11 @@ public class LeetCode2280 {
         System.out.println(i);
     }
 
+    /**
+     * 判断两点之间的斜率是否一致
+     * @param stockPrices
+     * @return
+     */
     public int minimumLines(int[][] stockPrices) {
         if (stockPrices == null || stockPrices.length == 1) {
             return 0;
