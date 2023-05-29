@@ -18,9 +18,7 @@ public class LeetCode2280 {
         if (stockPrices == null || stockPrices.length == 1) {
             return 0;
         }
-        Arrays.sort(stockPrices, (arr1, arr2) -> {
-            return arr1[0] - arr2[0];
-        });
+        Arrays.sort(stockPrices, (arr1, arr2) -> arr1[0] - arr2[0]);
         int len = stockPrices.length;
         int ans = 1;
         for (int i = 2; i < len; i++) {
