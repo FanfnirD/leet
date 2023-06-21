@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class LeetCode55 {
     public static void main(String[] args) {
         LeetCode55 code = new LeetCode55();
-        System.out.println(code.canJump1(new int[]{3, 2, 1, 0, 4}));
+        System.out.println(code.jump2(new int[]{0,1}));
     }
 
     public boolean canJump(int[] nums) {
@@ -70,6 +70,7 @@ public class LeetCode55 {
     /**
      * 从下标ii出发，能到达的位置是nums[i]+inums[i]+i
      * 不从下标ii出发，最大能到达的就是dp[i-1]dp[i−1]
+     *
      * @param nums
      * @return
      */
@@ -92,6 +93,29 @@ public class LeetCode55 {
             }
         }
         return true;
+    }
+
+    public boolean jump2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return false;
+        }
+        int curMaxJump = 0;
+        int nextMaxJump = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (curMaxJump < i) {
+                curMaxJump = nextMaxJump;
+            }
+
+            nextMaxJump = Math.max(nextMaxJump, i + nums[i]);
+
+            if (nextMaxJump >= nums.length - 1) {
+                return true;
+            } else if (nextMaxJump <= i) {
+                return false;
+            }
+        }
+        return false;
     }
 
 }
