@@ -26,12 +26,12 @@ public class Leet884 {
         //return res.toArray(new String[res.size()]);
         List<String> list = new ArrayList<>();
         Set<String> set = new HashSet<>();
-        for(String s : s1.split(" ")) {
-            if(set.add(s)) list.add(s);
+        for (String s : s1.split(" ")) {
+            if (set.add(s)) list.add(s);
             else list.remove(s);
         }
-        for(String s : s2.split(" ")) {
-            if(set.add(s)) list.add(s);
+        for (String s : s2.split(" ")) {
+            if (set.add(s)) list.add(s);
             else list.remove(s);
         }
         return list.toArray(new String[0]);
