@@ -22,7 +22,7 @@ public class LeetCode263 {
     }
 
     public static void main(String[] args) {
-        System.out.println(nthUglyNumber3(5, 2, 11, 13));
+
     }
 
     public static int nthUglyNumber(int n) {
